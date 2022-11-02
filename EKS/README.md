@@ -27,22 +27,25 @@ To use this configuration you will need:
 - with the name portworx- followed by a randomly generated string suffix
 
 If these default values are acceptable proceed to step 2, otherwise create a terraform.tfvars file with the following contents:
-
+```
 region=<region name goes here>
 ec2_instance_type=<instance type goes here>
 cluster_name=<cluster name prefix goes here>
-
+```
 2. Initialise the configuration:
-
+```
 terraform init
-
+```
 3. This step is optional, inspect the resources that the configuration will create:
-
+```
 terraform plan  
-  
+```  
 4. Deploy the configuration:
-
+```
 terraform apply -auto-approve
+```
 
-
-
+## Destroying The Resources Deployed By The Configuration
+```
+terraform destroy -auto-approve
+```
