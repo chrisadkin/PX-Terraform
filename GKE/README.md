@@ -21,27 +21,32 @@ gcloud auth application-default login
 
 ## Deploying The Configuration
 
-1. By default the configuration will create a three node cluster:
+1. Create a terraform.tfvars files containing the following line:
+```
+project_id=<project id goes here>
+```
+
+2. By default the configuration will create a three node cluster:
 
 - in the europe-west2 region
 - with three worker nodes based on e2-standard-8 compute instances
 - 1.22.12-gke.2300 kubernetes version
 
-If these default values are acceptable proceed to step 2, otherwise create a terraform.tfvars file with the following contents:
+If these default values are acceptable proceed to step 3, otherwise add the following lines to the terraform.tfvars file:
 ```
 region=<region name goes here>
 machine_type=<compute instance type goes here>
 kubernetes_version=<cluster name prefix goes here>
 ```
-2. Initialise the configuration:
+3. Initialise the configuration:
 ```
 terraform init
 ```
-3. This step is optional, inspect the resources that the configuration will create:
+4. This step is optional, inspect the resources that the configuration will create:
 ```
 terraform plan  
 ```  
-4. Deploy the configuration:
+5. Deploy the configuration:
 ```
 terraform apply -auto-approve
 ```
