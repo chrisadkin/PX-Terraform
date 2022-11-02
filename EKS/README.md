@@ -18,13 +18,27 @@ To use this configuration you will need:
 
 ## Deploying The Configuration
 
-1. Edit the terraform.tfvars files
+1. By default the configuration will create a three node cluster:
+
+- in the us-east2 region
+- with three worker nodes based on c4.2xlarge EC2 instances
+- with the name portworx- followed by a randomly generated string suffix
+
+If these default values are acceptable proceed to step 2, otherwise create a terraform.tfvars file with the following contents:
+
+region=<region name goes here>
+ec2_instance_type=<instance type goes here>
+cluster_name=<cluster name prefix goes here>
 
 2. Initialise the configuration:
 
 terraform init
 
-3. Deploy the configuration:
+3. This step is optional, inspect the resources that the configuration will create:
+
+terraform plan  
+  
+4. Deploy the configuration:
 
 terraform apply -auto-approve
 
