@@ -6,17 +6,19 @@ This repo contains Terraform configurations for creating Kubernetes clusters on 
 
 ## Deployment Instructions
 
-The machine used to deploy a Terraform configuration from requires the installation of the following components:
+1. The machine used to deploy a Terraform configuration from requires the installation of the following components:
 
 - [Git command line tool](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - [Terraform](https://www.terraform.io/downloads)
 
-Once both Git and Terraform are installed, clone this repository:
+2. Once both Git and Terraform are installed, clone this repository:
+```
+git clone https://github.com/chrisadkin/PX-Terraform.git
+```
 
-git clone 
+3. Change directory to either EKS, AKS or GKE - depending on which cloud you wish to deploy Kubernetes to, click on the relevant link(s) below for
+   instructions for deploying Kubernetes to a specific cloud provider:
 
-Next, click on the relevant link(s) below for deploying a Kubernetes cluster to AWS, Azure or GCP:
-
-- [AWS](https://github.com/chrisadkin/PX-Terraform/blob/main/AWS/README.md)
-- [Azure](https://github.com/chrisadkin/PX-Terraform/blob/main/AKS/README.md)
-- [GCP](https://github.com/chrisadkin/PX-Terraform/blob/main/GKE/README.md)
+- [AWS   - EKS](https://github.com/chrisadkin/PX-Terraform/blob/main/AWS/README.md)
+- [Azure - AKS](https://github.com/chrisadkin/PX-Terraform/blob/main/AKS/README.md)
+- [GCP   - GKE](https://github.com/chrisadkin/PX-Terraform/blob/main/GKE/README.md)
