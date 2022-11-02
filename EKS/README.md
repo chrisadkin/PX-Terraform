@@ -43,6 +43,13 @@ terraform plan
 terraform apply -auto-approve
 ```
 
+## Kubeconfig File Creation
+
+Issue the following command, substituting the placeholders in angular brackets as appropriate: 
+```
+aws eks update-kubeconfig --region <region-code> --name <my-cluster>
+```
+
 ## Destroying The Resources Deployed By The Configuration
 ```
 terraform destroy -auto-approve
