@@ -4,6 +4,16 @@
 
 This repo contains Terraform configurations for creating Kubernetes clusters on AWS, Azure and GCP with the permissions necessary for deploying Portworx with clouddrives, storage that Portworx automatically provisions. Refer to these links for the instructions for deploying a Kubernetes cluster to each respective cloud provider:
 
+## Please Note
+
+- For quorum purposes Portworx requires a Kubernetes cluster with a minimum of three worker nodes
+- Each worker nodes requires a minimum of:
+  - 4 logical processors
+  - 4 Gb of RAM
+  - 8 GB backing drive
+  - 2 GB free space for /var
+- Kernel 5.5 for worker node OS is only supported with Portworx 2.12 onwards
+
 ## Deployment Instructions
 
 1. The machine used to deploy a Terraform configuration from requires the installation of the following components:
