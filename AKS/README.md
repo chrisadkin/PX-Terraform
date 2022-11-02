@@ -8,7 +8,7 @@ To use this configuration you will need:
 
 - [an Azure account](https://portal.azure.com/#home)
 
-- [an installed Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
+- [to install the Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
   - after installing the az CLI, run:
 ```
 az login
