@@ -1,37 +1,29 @@
 # Overview
 
-Terraform configuration for creating a GCP Google Kubernetes Engine cluster with the permissions necessary for deploying Portworx to.
+Terraform configuration for creating an Azure Azure Kubernetes Service cluster with the permissions necessary for deploying Portworx to.
 
 ## Prerequisites
 
 To use this configuration you will need:
 
-- [a GCP Account](https://console.cloud.google.com/)
+- [an Azure account](https://portal.azure.com/#home)
 
-- [an installed GCP CLI](https://cloud.google.com/sdk/docs/install)
-  - after installing gcloud, run:
+- [an installed Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
+  - after installing the az CLI, run:
 ```
-gcloud init
+az login
 ```
-  - add your account to the application default credentials (ADC)
-```
-gcloud auth application-default login
-```
-- [kubectl command line tool](https://kubernetes.io/docs/tasks/tools/)
-
 ## Deploying The Configuration
 
 1. By default the configuration will create a three node cluster:
 
-- in the europe-west2 region
-- with three worker nodes based on e2-standard-8 compute instances
-- 1.22.12-gke.2300 kubernetes version
+- in the uksouth region
+- with three worker nodes based on standard_d8as_v4 virtual machines
 
 If these default values are acceptable proceed to step 2, otherwise create a terraform.tfvars file with the following contents:
 ```
 region=<region name goes here>
-machine_type=<compute instance type goes here>
-kubernetes_version=<cluster name prefix goes here>
+vmsize=<virtual machine type goes here>
 ```
 2. Initialise the configuration:
 ```
