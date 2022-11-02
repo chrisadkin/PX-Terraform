@@ -19,6 +19,6 @@ git clone https://github.com/chrisadkin/PX-Terraform.git
 3. Change directory to either EKS, AKS or GKE - depending on which cloud you wish to deploy Kubernetes to, click on the relevant link(s) below for
    instructions for deploying Kubernetes to a specific cloud provider:
 
-- [AWS   - EKS](https://github.com/chrisadkin/PX-Terraform/blob/main/AWS/README.md)
+- [AWS   - EKS](https://github.com/chrisadkin/PX-Terraform/blob/main/EKS/README.md)
 - [Azure - AKS](https://github.com/chrisadkin/PX-Terraform/blob/main/AKS/README.md)
 - [GCP   - GKE](https://github.com/chrisadkin/PX-Terraform/blob/main/GKE/README.md)
