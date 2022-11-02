@@ -1,6 +1,6 @@
 # Overview
 
-Terraform configuration for creating an AWS Elastic Container Services cluster with the permissions necessary for depoying Portworx to.
+Terraform configuration for creating an AWS Elastic Container Services cluster with the permissions necessary for deploying Portworx to.
 
 ## Prerequisites
 
