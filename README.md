@@ -12,7 +12,7 @@ This repo contains Terraform configurations for creating Kubernetes clusters on 
   - 4 Gb of RAM
   - 8 GB backing drive
   - 2 GB free space for /var
-- Kernel 5.5 for worker node OS is only supported with Portworx 2.12 onwards
+- Kernel 5.5 for worker node OSes is only supported with Portworx 2.12 onwards
 
 ## Deployment Instructions
 
