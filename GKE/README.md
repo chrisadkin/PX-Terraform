@@ -6,29 +6,32 @@ Terraform configuration for creating a GCP Google Kubernetes Engine cluster with
 
 To use this configuration you will need:
 
-- [an AWS Account](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fportal.aws.amazon.com%2Fbilling%2Fsignup%2Fresume&client_id=signup&code_challenge_method=SHA-256&code_challenge=D4Ggbzl5tnL0TF44U1cPT4gn97OZnIDn7Tiig3AO_Lw#/start)
+- [a GCP Account](https://console.cloud.google.com/)
 
-- [the AWS CLI both installed and configured]()
-  - [AWS CLI installation instructions can be found here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
-  - [Instructions for configuring the AWS CLI can be found here](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)
-
-- [The AWS IAM Authenticator](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html)
-
+- [an installed GCP CLI](https://cloud.google.com/sdk/docs/install)
+  - after installing gcloud, run:
+```
+gcloud init
+```
+  - add your account to the application default credentials (ADC)
+```
+gcloud auth application-default login
+```
 - [kubectl command line tool](https://kubernetes.io/docs/tasks/tools/)
 
 ## Deploying The Configuration
 
 1. By default the configuration will create a three node cluster:
 
-- in the us-east2 region
-- with three worker nodes based on c4.2xlarge EC2 instances
-- with the name portworx- followed by a randomly generated string suffix
+- in the europe-west2 region
+- with three worker nodes based on e2-standard-8 compute instances
+- 1.22.12-gke.2300 kubernetes version
 
 If these default values are acceptable proceed to step 2, otherwise create a terraform.tfvars file with the following contents:
 ```
 region=<region name goes here>
-ec2_instance_type=<instance type goes here>
-cluster_name=<cluster name prefix goes here>
+machine_type=<compute instance type goes here>
+kubernetes_version=<cluster name prefix goes here>
 ```
 2. Initialise the configuration:
 ```
@@ -45,9 +48,17 @@ terraform apply -auto-approve
 
 ## Kubeconfig File Creation
 
-Issue the following command, substituting the placeholders in angular brackets as appropriate: 
+1. Install the gke plugin:
 ```
-aws eks update-kubeconfig --region <region-code> --name <my-cluster>
+gcloud components install gke-gcloud-auth-plugin
+```
+2. Check the gke-gcloud-auth-plugin binary version:
+```
+gke-gcloud-auth-plugin --version
+```
+3. Update your kubeconfig:
+```
+gcloud container clusters get-credentials <cluster_name> --region <region>
 ```
 
 ## Destroying The Resources Deployed By The Configuration
