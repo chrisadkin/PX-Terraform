@@ -8,7 +8,7 @@ To use this configuration you will need:
 
 - [a GCP Account](https://console.cloud.google.com/)
 
-- [an installed GCP CLI](https://cloud.google.com/sdk/docs/install)
+- [to install the GCP CLI](https://cloud.google.com/sdk/docs/install)
   - after installing gcloud, run:
 ```
 gcloud init
