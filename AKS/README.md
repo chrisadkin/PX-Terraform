@@ -15,25 +15,35 @@ az login
 ```
 ## Deploying The Configuration
 
-1. By default the configuration will create a three node cluster:
+1. Create a terraform.tfvars files containing the your Azure subscription id and tenant id:
+```
+subscription_id=<your Azure subscription id goes here>
+tenant_id=<your Azure tenant id goes here>
+```
 
+2. By default the configuration will create a three node cluster:
+
+- named portworx
+- that resides in a portworx resource group
 - in the uksouth region
 - with three worker nodes based on standard_d8as_v4 virtual machines
 
-If these default values are acceptable proceed to step 2, otherwise create a terraform.tfvars file with the following contents:
+If these default values are acceptable proceed to step 3, otherwise add the following lines to the terraform.tfvars file:
 ```
+cluster_name=<cluster name goes here>
+resource_group=<resource group goes here>
 region=<region name goes here>
 vmsize=<virtual machine type goes here>
 ```
-2. Initialise the configuration:
+3. Initialise the configuration:
 ```
 terraform init
 ```
-3. This step is optional, inspect the resources that the configuration will create:
+4. This step is optional, inspect the resources that the configuration will create:
 ```
 terraform plan  
 ```  
-4. Deploy the configuration:
+5. Deploy the configuration:
 ```
 terraform apply -auto-approve
 ```
