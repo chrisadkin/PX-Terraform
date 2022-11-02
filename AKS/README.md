@@ -50,18 +50,7 @@ terraform apply -auto-approve
 
 ## Kubeconfig File Creation
 
-1. Install the gke plugin:
-```
-gcloud components install gke-gcloud-auth-plugin
-```
-2. Check the gke-gcloud-auth-plugin binary version:
-```
-gke-gcloud-auth-plugin --version
-```
-3. Update your kubeconfig:
-```
-gcloud container clusters get-credentials <cluster_name> --region <region>
-```
+The configuration will automatically update the ~/.kube/config file.
 
 ## Destroying The Resources Deployed By The Configuration
 ```
