@@ -26,4 +26,6 @@ resource "azurerm_role_assignment" "portworx_cloud_drive" {
   scope                = "/subscriptions/${var.subscription_id}/resourceGroups/MC_${var.resource_group}_${var.cluster_name}_uksouth"
   role_definition_name = azurerm_role_definition.portworx_cloud_drive.name
   principal_id         = var.principal_id 
+  
+  depends_on = [ azurerm_role_definition.portworx_cloud_drive ]
 }
